@@ -1,104 +1,94 @@
-/* Sticky footer styles */
 body, html {
-    height: 100%; /* Ensure the body and html elements take full height */
+    height: 100%;
+    margin: 0;
 }
 
 .container-fluid {
-    min-height: 100%; /* Ensure the container takes up the full height */
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.main-container {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+}
+
 footer.footer {
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: auto;
 }
 
 .sidebar {
-    background-color: #003366; /* Dark blue sidebar */
-    color: #f4f4f4; /* Light gray text */
+    background-color: #003366;
+    color: #f4f4f4;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     padding-top: 1rem;
-    min-height: 100vh; /* Ensure sidebar takes full height */
-    width:10px;
+    min-height: 100vh;
+    min-width: 250px;
+    padding: 20px;
+    position: relative;
+    transition: width 0.3s ease;
 }
 
-    .sidebar .nav-link {
-        color: #f4f4f4; /* Light gray for links */
-        font-size: 1.1rem;
-        padding: 10px;
-        transition: all 0.3s;
-    }
-
-        .sidebar .nav-link.active,
-        .sidebar .nav-link:hover {
-            color: #fff; /* White for active or hover links */
-            background-color: #006699; /* Lighter blue for hover */
-            border-radius: 5px;
-        }
-
-    .sidebar .nav-section {
-        margin-top: 20px;
-        color: #f4f4f4; /* Light gray for section titles */
-        font-weight: bold;
-        font-size: 1.2rem;
-        padding-left: 10px;
-    }
-
-    .sidebar .nav-item .btn-login {
-        background-color: #007bff; /* Blue for the login button */
-        color: white;
-        font-size: 1.2rem;
-        border: none;
-        width: 100%;
-        padding: 12px;
-        margin-top: 20px;
-        text-align: center;
-        transition: background-color 0.3s, transform 0.3s;
-        border-radius: 5px;
-    }
-
-        .sidebar .nav-item .btn-login:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            transform: scale(1.05); /* Slight scale effect on hover */
-        }
-
-        .sidebar .nav-item .btn-login:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue outline on focus */
-        }
-
-.content-header {
-    padding: 20px 0;
-    border-bottom: 2px solid #dee2e6;
-    background-color: #f8f9fa; /* Light gray background for content header */
+.body-contain {
+    width: 100%;
+    padding: 0;
 }
 
-    .content-header h1 {
-        font-size: 2rem;
-        color: #003366; /* Dark blue for header */
-    }
+.sidebar .nav-link {
+    color: #f4f4f4;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: #006699;
+    border-radius: 5px;
+}
+
+.sidebar .nav-section {
+    margin-top: 20px;
+    color: #f4f4f4;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+
+.sidebar .sidebar-item {
+    display: inline-block;
+}
 
 .footer {
-    background-color: #003366; /* Dark blue footer */
-    color: #f4f4f4; /* Light gray text */
+    background-color: #003366;
+    color: #f4f4f4;
     text-align: center;
     padding: 10px 0;
 }
 
-    .footer a {
-        color: #f4f4f4;
-        text-decoration: none;
-    }
-
-        .footer a:hover {
-            color: #fff;
-        }
-
-/* Remove unnecessary scrolling */
-body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+.footer a {
+    color: #f4f4f4;
+    text-decoration: none;
 }
 
-.container-fluid {
-    padding: 0;
+.footer a:hover {
+    color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar .sidebar-item {
+        display: none; /* Hide items by default */
+    }
+
+    .sidebar-item.d-none {
+        display: block; /* Display when toggled */
+    }
 }

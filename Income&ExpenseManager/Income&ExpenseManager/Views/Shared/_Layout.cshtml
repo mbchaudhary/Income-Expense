@@ -9,79 +9,79 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="p-0">
+        <div class="div main-container">
             <!-- Sidebar -->
-            <nav class="col-3 col-md-2 d-md-block sidebar position-relative">
-                <span class="bi bi-house-fill position-absolute top-0 bg-danger" style="right:-10px;"></span>
+            <nav class="sidebar  position-relative">
+                <span id="toggleSidebarButton" class="bi bi-house-fill position-absolute top-0 bg-danger" style="right:-10px;"></span>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" id="Dashboard" asp-area="" asp-controller="Home" asp-action="Home">
-                            <span class="bi bi-house-fill"></span> <span class="section-title">Dashboard</span>
+                            <span class="bi bi-house-fill"></span> <span class="section-title sidebarItem">Dashboard</span>
                         </a>
                     </li>
 
                     <!-- Income & Expense Section -->
-                    <div class="nav-section">Income & Expense</div>
+                    <div class="nav-section section-title sidebarItem ">Income & Expense</div>
                     <li class="nav-item">
                         <a class="nav-link" id="Income" asp-area="" asp-controller="Income" asp-action="GetIncomeData">
-                            <span class="bi bi-cash-coin"></span>  <span class="section-title">Income</span>
+                            <span class="bi bi-cash-coin"></span>  <span class="section-title sidebarItem">Income</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" id="Add_Income" asp-area="" asp-controller="Income" asp-action="AddForm">
-                            <i class="bi bi-plus-circle"></i> <span class="section-title">Add Income</span>
+                            <i class="bi bi-plus-circle"></i> <span class="section-title sidebarItem">Add Income</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" id="Expense" asp-area="" asp-controller="Expense" asp-action="GetExpenseData">
-                            <span class="bi bi-receipt"></span>  <span class="section-title">Expenses</span>
+                            <span class="bi bi-receipt"></span>  <span class="section-title sidebarItem">Expenses</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" id="Add_Expense" asp-area="" asp-controller="Expense" asp-action="AddForm">
-                            <i class="bi bi-dash-circle"></i> <span class="section-title">Add Expense</span>
+                            <i class="bi bi-dash-circle"></i> <span class="section-title sidebarItem">Add Expense</span>
                         </a>
                     </li>
 
                     <!-- Reports Section -->
-                    <div class="nav-section">Reports</div>
+                    <div class="nav-section section-title sidebarItem ">Reports</div>
                     <li class="nav-item">
                         <a class="nav-link" id="Report" asp-area="" asp-controller="Report" asp-action="GetReportData">
-                            <span class="bi bi-bar-chart-fill"></span> <span class="section-title">Reports</span>
+                            <span class="bi bi-bar-chart-fill"></span> <span class="section-title sidebarItem">Reports</span>
                         </a>
                     </li>
 
                     <!-- Categories Section -->
-                    <div class="nav-section">Categories</div>
+                    <div class="nav-section section-title sidebarItem ">Categories</div>
                     <li class="nav-item">
                         <a class="nav-link" id="Category" asp-area="" asp-controller="Category" asp-action="GetCategoryData">
-                            <i class="bi bi-card-list"></i> Categories
+                            <i class="bi bi-card-list"></i> <span class="section-title sidebarItem">Add Expense</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" id="Add_Category" asp-area="" asp-controller="Category" asp-action="AddForm">
-                            <i class="bi bi-plus-circle"></i> Add Category
+                            <i class="bi bi-plus-circle"></i> <span class="section-title sidebarItem">Add Expense</span>
                         </a>
                     </li>
 
                     <!-- Login Button -->
-                    <li class="nav-item">
+                   @*  <li class="nav-item">
                         <!-- Update LogOut Button Design -->
                         <a class="btn btn-danger w-100 mt-3" asp-area="" asp-controller="LoginAndSignUp" asp-action="Login">
                             <i class="bi bi-box-arrow-right"></i> LogOut
                         </a>
-                    </li>
+                    </li> *@
                 </ul>
             </nav>
 
 
             <!-- Main Content -->
-            <main class="col-9 ms-sm-auto col-md-10 px-md-4">
+            <main class="body-contain ms-sm-auto  px-md-4">
                 <header class="content-header">
                     <h1>@ViewData["Title"]</h1>
                 </header>
@@ -105,27 +105,43 @@
     <!-- JavaScript to Add/Remove Active Class -->
     <script>
         // Wait until the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get all nav links
-            var links = document.querySelectorAll('.nav-link');
+        // Make sure this script is loaded after the DOM
+        document.addEventListener("DOMContentLoaded", function () {
+            const screenHeight = window.innerWidth;
+            console.log(screenHeight);
 
-            // Function to set the active class
-            function setActiveClass(event) {
-                // Remove active class from all links
-                links.forEach(function (link) {
-                    link.classList.remove('active');
-                });
-
-                // Add active class to the clicked link
-                event.target.classList.add('active');
+            if (screenHeight < 700) {
+                console.log("Calling toggleSidebar...");
+                toggleSidebar();
             }
-
-            // Add event listeners to all links
-            links.forEach(function (link) {
-                link.addEventListener('click', setActiveClass);
-            });
         });
+
+
+        function toggleSidebar() {
+            // Select all sidebar items
+            var sidebarItems = document.querySelectorAll(".sidebarItem");
+            console.log("Call");
+
+
+            sidebarItems.forEach(function (item) {
+                // Check for the presence of the section-title class
+                if (item.classList.contains("section-title")) {
+                    item.classList.remove("section-title"); // Toggle Bootstrap's d-none class
+                    item.classList.add("d-none");
+                } else {
+                    // If section-title class doesn't exist, add it
+                    item.classList.add("section-title");
+                    item.classList.remove("d-none");
+                    console.log(`Added section-title class to item:`, item);
+                }
+            });
+        }
+
+            // Call the function
+            document.getElementById("toggleSidebarButton").addEventListener("click", toggleSidebar);
+        window.addEventListener("resize", SetWidth());
     </script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
