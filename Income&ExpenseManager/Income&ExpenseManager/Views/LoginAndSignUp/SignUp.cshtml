@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Sign Up";
+    Layout = "_LogIn";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Expense Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 100vh;
+            margin: 0;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <div class="card p-4">
+            <h2 class="text-center mb-4" style="color: #333;">Sign Up for Expense Manager</h2>
+            <form id="signupForm" method="post" action="@Url.Action("SignUp", "LoginAndSignUp")">
+                <div class="mb-3">
+                    <label for="UserName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="UserName" name="UserName" placeholder="Enter your Username" required />
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter your email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter your password" required />
+                </div>
+                <div class="mb-3">
+                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm your password" required />
+                    <span id="passwordError" class="error-message d-none">Passwords do not match.</span>
+                </div>
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+                <div class="text-center">
+                    <p class="text-muted">
+                        Already have an account?
+                        <a asp-area="" asp-controller="LoginAndSignUp" asp-action="Login">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            const password = document.getElementById("Password").value;
+            const confirmPassword = document.getElementById("ConfirmPassword").value;
+            const errorElement = document.getElementById("passwordError");
+
+            if (password !== confirmPassword) {
+                e.preventDefault(); // Prevent form submission
+                errorElement.classList.remove("d-none");
+            } else {
+                errorElement.classList.add("d-none");
+            }
+        });
+    </script>
+</body>
+</html>

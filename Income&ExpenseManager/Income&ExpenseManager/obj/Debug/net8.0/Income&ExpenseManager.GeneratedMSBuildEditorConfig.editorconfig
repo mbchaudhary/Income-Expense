@@ -1,0 +1,83 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Income_ExpenseManager
+build_property.RootNamespace = Income_ExpenseManager
+build_property.ProjectDir = C:\Users\new\source\repos\Income&ExpenseManager\Income&ExpenseManager\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\new\source\repos\Income&ExpenseManager\Income&ExpenseManager
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Category/AddForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Category/GetCategoryData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcR2V0Q2F0ZWdvcnlEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Expense/AddForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZVxBZGRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Expense/GetExpenseData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZVxHZXRFeHBlbnNlRGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Income/AddForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jb21lXEFkZEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Income/GetIncomeData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jb21lXEdldEluY29tZURhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/LoginAndSignUp/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5BbmRTaWduVXBcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/LoginAndSignUp/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5BbmRTaWduVXBcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Report/GetReportData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEdldFJlcG9ydERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-bi2xqrw4yf
+
+[C:/Users/new/source/repos/Income&ExpenseManager/Income&ExpenseManager/Views/Shared/_LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-wqwophruxe

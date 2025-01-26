@@ -1,0 +1,6 @@
+@Income_ExpenseApiManager_HostAddress = http://localhost:5183
+
+GET {{Income_ExpenseApiManager_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Income_ExpenseManager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-3 col-md-2 d-md-block sidebar position-relative">
+                <span class="bi bi-house-fill position-absolute top-0 bg-danger" style="right:-10px;"></span>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Dashboard" asp-area="" asp-controller="Home" asp-action="Home">
+                            <span class="bi bi-house-fill"></span> <span class="section-title">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Income & Expense Section -->
+                    <div class="nav-section">Income & Expense</div>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Income" asp-area="" asp-controller="Income" asp-action="GetIncomeData">
+                            <span class="bi bi-cash-coin"></span>  <span class="section-title">Income</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Add_Income" asp-area="" asp-controller="Income" asp-action="AddForm">
+                            <i class="bi bi-plus-circle"></i> <span class="section-title">Add Income</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Expense" asp-area="" asp-controller="Expense" asp-action="GetExpenseData">
+                            <span class="bi bi-receipt"></span>  <span class="section-title">Expenses</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Add_Expense" asp-area="" asp-controller="Expense" asp-action="AddForm">
+                            <i class="bi bi-dash-circle"></i> <span class="section-title">Add Expense</span>
+                        </a>
+                    </li>
+
+                    <!-- Reports Section -->
+                    <div class="nav-section">Reports</div>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Report" asp-area="" asp-controller="Report" asp-action="GetReportData">
+                            <span class="bi bi-bar-chart-fill"></span> <span class="section-title">Reports</span>
+                        </a>
+                    </li>
+
+                    <!-- Categories Section -->
+                    <div class="nav-section">Categories</div>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Category" asp-area="" asp-controller="Category" asp-action="GetCategoryData">
+                            <i class="bi bi-card-list"></i> Categories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Add_Category" asp-area="" asp-controller="Category" asp-action="AddForm">
+                            <i class="bi bi-plus-circle"></i> Add Category
+                        </a>
+                    </li>
+
+                    <!-- Login Button -->
+                    <li class="nav-item">
+                        <!-- Update LogOut Button Design -->
+                        <a class="btn btn-danger w-100 mt-3" asp-area="" asp-controller="LoginAndSignUp" asp-action="Login">
+                            <i class="bi bi-box-arrow-right"></i> LogOut
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <!-- Main Content -->
+            <main class="col-9 ms-sm-auto col-md-10 px-md-4">
+                <header class="content-header">
+                    <h1>@ViewData["Title"]</h1>
+                </header>
+                <main role="main" class="py-4">
+                    @RenderBody()
+                </main>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2024 - Income_ExpenseManager - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- JavaScript to Add/Remove Active Class -->
+    <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all nav links
+            var links = document.querySelectorAll('.nav-link');
+
+            // Function to set the active class
+            function setActiveClass(event) {
+                // Remove active class from all links
+                links.forEach(function (link) {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to the clicked link
+                event.target.classList.add('active');
+            }
+
+            // Add event listeners to all links
+            links.forEach(function (link) {
+                link.addEventListener('click', setActiveClass);
+            });
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
