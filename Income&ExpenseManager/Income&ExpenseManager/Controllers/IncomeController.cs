@@ -61,7 +61,7 @@ namespace Income_ExpenseManager.Controllers
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response;
 
-                if (incomeModel.IncomeID > 0)
+                if (incomeModel.IncomeID > 0 && incomeModel.IncomeID != null )
                     response = await _httpClient.PutAsync($"{baseUrl}/updateIncome", content);
                 else
                     response = await _httpClient.PostAsync($"{baseUrl}/InsertIncome", content);

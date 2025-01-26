@@ -2,6 +2,7 @@
     ViewData["Title"] = "Reports";
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
@@ -51,17 +52,48 @@
     <div class="container">
         <!-- Filter Section -->
         <div class="filter-container">
-            <h5 class="text-primary">Filter by Date</h5>
+            <h5 class="text-primary">Filter by Date, Type, Category, and Amount</h5>
             <form class="row g-3">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="startDate" class="form-label">Start Date</label>
                     <input type="date" class="form-control" id="startDate" name="startDate" />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="endDate" class="form-label">End Date</label>
                     <input type="date" class="form-control" id="endDate" name="endDate" />
                 </div>
-                <div class="col-md-4 d-flex align-items-end">
+                <div class="col-md-3">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-select" id="type" name="type">
+                        <option value="">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category">
+                        <option value="">All</option>
+                        <option value="salary">Salary</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="entertainment">Entertainment</option>
+                    </select>
+                </div>
+                <!-- Amount Filter -->
+                <div class="col-md-3">
+                    <label for="amountCondition" class="form-label">Amount</label>
+                    <select class="form-select" id="amountCondition" name="amountCondition">
+                        <option value="">Select Condition</option>
+                        <option value="greaterThan">Greater Than</option>
+                        <option value="lessThan">Less Than</option>
+                        <option value="equalTo">Equal To</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="amountValue" class="form-label">Amount Value</label>
+                    <input type="number" class="form-control" id="amountValue" name="amountValue" />
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
                     <button type="button" class="btn btn-custom w-100">Apply Filter</button>
                 </div>
             </form>
@@ -100,7 +132,7 @@
 
                     <!-- Expense Row 1 -->
                     <tr>
-                        <td>3</td>
+                        <td>2</td>
                         <td>$200</td>
                         <td>Utilities</td>
                         <td>2024-12-10</td>

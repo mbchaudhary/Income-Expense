@@ -7,7 +7,7 @@ namespace Income_ExpenseManager.Models
     public class IncomeModel
     {
         [Key]
-        public int IncomeID { get; set; }
+        public int? IncomeID { get; set; }
 
         [Required]
         public int UserID { get; set; }

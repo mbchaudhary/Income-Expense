@@ -2,7 +2,7 @@
 @using Income_ExpenseManager.BAL;
 
 @{
-    // ViewData["Title"] = "Add - Income";
+    ViewData["Title"] = "Add - Income";
 }
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
         }
 
         .form-container {
-            margin-top: 20px;
+            /* margin-top: 10px; */
         }
 
         .btn-custom {
@@ -40,9 +40,9 @@
 <body>
     <div class="container form-container">
         <!-- Back Button -->
-        <div class="mb-3 text-end">
+        @* <div class="mb-3 text-end">
             <a href="javascript:history.back()" class="btn btn-back">Back</a>
-        </div>
+        </div> *@
 
         <!-- Income Form -->
         <form asp-action="AddForm" method="post" class="shadow p-4 rounded bg-white">
