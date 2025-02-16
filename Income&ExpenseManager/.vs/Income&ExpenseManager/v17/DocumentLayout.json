@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\controllers\\incomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\controllers\\incomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\models\\incomemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\models\\incomemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\views\\expense\\getexpensedata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\views\\expense\\getexpensedata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\views\\income\\addform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\views\\income\\addform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expensemanager\\income\u0026expensemanager\\wwwroot\\js\\dropdown.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E58182AF-6FDB-4489-A62F-4A9277D84F4C}|Income\u0026ExpenseManager\\Income\u0026ExpenseManager.csproj|solutionrelative:income\u0026expensemanager\\wwwroot\\js\\dropdown.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,81 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IncomeModel.cs",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Models\\IncomeModel.cs",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\Models\\IncomeModel.cs",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Models\\IncomeModel.cs",
-              "RelativeToolTip": "Income\u0026ExpenseManager\\Models\\IncomeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T18:43:20.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IncomeController.cs",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Controllers\\IncomeController.cs",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\Controllers\\IncomeController.cs",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Controllers\\IncomeController.cs",
-              "RelativeToolTip": "Income\u0026ExpenseManager\\Controllers\\IncomeController.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAuwEQAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T18:41:32.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddForm.cshtml",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Income\\AddForm.cshtml",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\Views\\Income\\AddForm.cshtml",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Income\\AddForm.cshtml",
-              "RelativeToolTip": "Income\u0026ExpenseManager\\Views\\Income\\AddForm.cshtml",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAwwGIAAAAAAAAA",
+              "Title": "GetExpenseData.cshtml",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Expense\\GetExpenseData.cshtml",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\Views\\Expense\\GetExpenseData.cshtml",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Expense\\GetExpenseData.cshtml",
+              "RelativeToolTip": "Income\u0026ExpenseManager\\Views\\Expense\\GetExpenseData.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-26T18:33:50.916Z",
+              "WhenOpened": "2025-02-12T03:59:02.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dropdown.min.js",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\wwwroot\\js\\dropdown.min.js",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\wwwroot\\js\\dropdown.min.js",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\wwwroot\\js\\dropdown.min.js",
-              "RelativeToolTip": "Income\u0026ExpenseManager\\wwwroot\\js\\dropdown.min.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-26T18:22:41.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Income\u0026ExpenseManager\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwEcAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-26T17:28:50.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseManager\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseManager\\Income\u0026ExpenseManager\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Income\u0026ExpenseManager\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-26T17:29:08.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-12T03:57:01.579Z"
             }
           ]
         },

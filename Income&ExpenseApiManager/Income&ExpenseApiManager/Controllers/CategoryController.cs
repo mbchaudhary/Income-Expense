@@ -11,7 +11,7 @@ using System.Net.Http;
 
 namespace Income_ExpenseApiManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -95,6 +95,24 @@ namespace Income_ExpenseApiManager.Controllers
         }
 
 
+        [HttpGet("{id?}")]  // Make `id` optional
+        public IActionResult GetExpenseDataByUserID(int? id, [FromServices] CategoryRepositery categoryRepositery)
+        {
+            // Validate input (only reject negative values)
+            if (id.HasValue && id <= 0)
+            {
+                return BadRequest("Invalid User ID.");
+            }
+
+            List<CategoriesModel> model = categoryRepositery.SelectByUserID(id);
+
+            if (model == null || model.Count == 0)
+            {
+                return NotFound("No categories found.");
+            }
+
+            return Ok(model);
+        }
 
 
 
@@ -120,6 +138,28 @@ namespace Income_ExpenseApiManager.Controllers
             }
         }
 
+
+        [HttpGet("{id}")]
+
+        public IActionResult SelectByCategoryID(int id, CategoryRepositery categoryRepositery)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid User ID");
+            }
+
+            CategoriesModel categories = categoryRepositery.SelectByCategoryID(id);
+
+            if (categories == null)
+            {
+                return NotFound("No Category records found for the given User ID.");
+            }
+
+            return Ok(categories);
+        }
+
+
+
         [HttpGet("{categoryType}")]
         public IActionResult SelectByCategoryType(string categoryType, [FromServices] CategoryRepositery categoryRepositery)
         {
@@ -139,12 +179,34 @@ namespace Income_ExpenseApiManager.Controllers
         }
 
 
+        [HttpPut]
+        public IActionResult CategoriesUpdate([FromBody] CategoriesModel model, [FromServices] CategoryRepositery categoryRepositery)
+        {
+            if (model == null || model.CategoryId <= 0)
+            {
+                return BadRequest(new { message = "Invalid category data." });
+            }
+
+            bool isUpdated = categoryRepositery.UpdateCategories(model);
+
+            if (isUpdated)
+            {
+                return Ok(new { message = "Category updated successfully!" });
+            }
+            else
+            {
+                return NotFound(new { message = "Category not found or no changes made." });
+            }
+        }
 
 
 
-    [HttpDelete("{id}")]
 
-        public IActionResult DeletExpense(int id)
+
+
+        [HttpDelete("{id}")]
+
+        public IActionResult DeletCategoty(int id)
         {
             string cs = this._configuration.GetConnectionString("ConnectionString");
             SqlConnection conn = new SqlConnection(cs);

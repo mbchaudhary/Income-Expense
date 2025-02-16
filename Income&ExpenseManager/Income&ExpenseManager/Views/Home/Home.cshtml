@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    var totalIncome = ViewData["TotalIncome"] ?? 0;
+    var totalExpense = ViewData["TotalExpense"] ?? 0;
+    var netSavings = ViewData["NetSavings"] ?? 0;
+    var transactions = ViewData["Transactions"] as List<Income_ExpenseManager.Models.TransactionModel> ?? new List<Income_ExpenseManager.Models.TransactionModel>();
+    var monthlyIncome = ViewData["MonthlyIncome"] as List<int> ?? new List<int>();
+    var monthlyExpense = ViewData["MonthlyExpense"] as List<int> ?? new List<int>();
+}
+
     <style>
         .dashboard-card {
             border: none;
@@ -41,8 +43,7 @@
                 background-color: #17a673;
             }
     </style>
-</head>
-<body>
+
     <div class="container my-5">
 
         <!-- Summary Cards -->
@@ -53,7 +54,7 @@
                         <i class="bi bi-cash-coin fs-3"></i> Total Income
                     </div>
                     <div class="card-body text-center">
-                        <h3 class="text-success fw-bold">$5,000</h3>
+                        <h3 class="text-success fw-bold">$@totalIncome</h3>
                         <p class="text-muted">Income this month</p>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                         <i class="bi bi-wallet2 fs-3"></i> Total Expenses
                     </div>
                     <div class="card-body text-center">
-                        <h3 class="text-danger fw-bold">$3,200</h3>
+                        <h3 class="text-danger fw-bold">$@totalExpense</h3>
                         <p class="text-muted">Expenses this month</p>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                         <i class="bi bi-piggy-bank fs-3"></i> Net Savings
                     </div>
                     <div class="card-body text-center">
-                        <h3 class="text-primary fw-bold">$1,800</h3>
+                        <h3 class="text-primary fw-bold">$@netSavings</h3>
                         <p class="text-muted">Net savings this month</p>
                     </div>
                 </div>
@@ -101,24 +102,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>12/10/2024</td>
-                                    <td>Salary</td>
-                                    <td>Income</td>
-                                    <td class="text-success">$2,000</td>
-                                </tr>
-                                <tr>
-                                    <td>11/10/2024</td>
-                                    <td>Grocery Shopping</td>
-                                    <td>Food</td>
-                                    <td class="text-danger">-$150</td>
-                                </tr>
-                                <tr>
-                                    <td>10/10/2024</td>
-                                    <td>Electricity Bill</td>
-                                    <td>Utilities</td>
-                                    <td class="text-danger">-$120</td>
-                                </tr>
+                                @if (transactions.Any())
+                                {
+                                    @foreach (var transaction in transactions)
+                                    {
+                                        <tr>
+                                            <td>@transaction.Date.ToString("dd/MM/yyyy")</td>
+                                            <td>@transaction.Description</td>
+                                            <td>@transaction.Category</td>
+                                            <td class="@(transaction.Amount >= 0 ? "text-success" : "text-danger")">
+                                                @(transaction.Amount >= 0 ? "$" + transaction.Amount : "-$" + Math.Abs(transaction.Amount))
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="4" class="text-center text-muted">No transactions available</td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -147,6 +150,55 @@
         </div>
     </div>
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-lg-12">
+            <div class="card dashboard-card shadow-lg">
+                <div class="card-header text-center">
+                    <i class="bi bi-bar-chart-line"></i> Income vs. Expense Chart
+                </div>
+                <div class="card-body">
+                    <canvas id="incomeExpenseChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById('incomeExpenseChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [
+                {
+                    label: 'Income',
+                    data: @Html.Raw(Json.Serialize(monthlyIncome)),
+                    backgroundColor: 'rgba(40, 167, 69, 0.7)',
+                    borderColor: 'rgba(40, 167, 69, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Expenses',
+                    data: @Html.Raw(Json.Serialize(monthlyExpense)),
+                    backgroundColor: 'rgba(220, 53, 69, 0.7)',
+                    borderColor: 'rgba(220, 53, 69, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

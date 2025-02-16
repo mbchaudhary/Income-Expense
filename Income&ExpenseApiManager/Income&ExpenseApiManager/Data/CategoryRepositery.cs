@@ -36,6 +36,116 @@ namespace Income_ExpenseApiManager.Data
             }
         }
 
+
+        public List<CategoriesModel> SelectByUserID(int? id)
+        {
+            string cs = this._configuration.GetConnectionString("ConnectionString");
+
+            List<CategoriesModel> model = new List<CategoriesModel>();
+
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetCategoriesByUserId";
+
+                    // Handle NULL properly when passing parameters
+                    cmd.Parameters.AddWithValue("@UserId", id ?? (object)DBNull.Value);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            model.Add(new CategoriesModel
+                            {
+                                CategoryId = Convert.ToInt32(reader["CategoryId"]),
+
+                                UserId = reader["UserId"] == DBNull.Value ? (int?)null : Convert.ToInt32(reader["UserId"]),
+
+                                CategoryName = reader["CategoryName"].ToString(),
+                                CategoryType = reader["CategoryType"].ToString(),
+                            });
+                        }
+                    }
+                }
+            }
+            return model;
+        }
+
+
+        public CategoriesModel SelectByCategoryID(int id) // Changed return type to CategoriesModel
+        {
+            string cs = this._configuration.GetConnectionString("ConnectionString");
+
+            CategoriesModel categories = null; // Initialize as null
+
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetCategoryById";
+                    cmd.Parameters.AddWithValue("@CategoryId", id);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read()) // Read only the first record
+                        {
+                            categories = new CategoriesModel
+                            {
+                                CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId")),
+                                UserId = reader.IsDBNull(reader.GetOrdinal("UserId")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("UserId")),
+                                CategoryName = reader.GetString(reader.GetOrdinal("CategoryName")),
+                                CategoryType = reader.GetString(reader.GetOrdinal("CategoryType"))
+                            };
+                        }
+                    }
+                }
+            }
+
+            return categories; // Returns null if no record is found
+        }
+
+
+
+        public bool UpdateCategories(CategoriesModel categories)
+        {
+            // Return false if UserId is null to prevent unnecessary DB calls
+            if (!categories.UserId.HasValue)
+            {
+                return false;
+            }
+
+            string cs = this._configuration.GetConnectionString("ConnectionString");
+
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateCategoryByUserId";
+
+                    cmd.Parameters.AddWithValue("@CategoryId", categories.CategoryId);
+                    cmd.Parameters.AddWithValue("@CategoryName", categories.CategoryName);
+                    cmd.Parameters.AddWithValue("@CategoryType", categories.CategoryType);
+                    cmd.Parameters.AddWithValue("@UserId", categories.UserId.Value); // UserId is guaranteed to have a value
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+        }
+
+
+
         public List<CategoriesModel> GetCategoryType(string categoryType)
         {
             string cs = _configuration.GetConnectionString("ConnectionString");
@@ -78,37 +188,4 @@ namespace Income_ExpenseApiManager.Data
             return categories;
         }
     }
-
-
-
-    //public List<CategoriesDropDown> getCategoriesDropdown()
-    //{
-    //    string connectionString = this._configuration.GetConnectionString("ConnectionString");
-    //    List<CategoriesDropDown> categoriesList = new List<CategoriesDropDown>();
-
-    //    using (SqlConnection conn = new SqlConnection(connectionString))
-    //    {
-    //        conn.Open();
-    //        using (SqlCommand cmd = conn.CreateCommand())
-    //        {
-    //            cmd.CommandType = CommandType.StoredProcedure;
-    //            cmd.CommandText = "GET_Categories_DropDown";
-
-    //            using (SqlDataReader reader = cmd.ExecuteReader())
-    //            {
-    //                while (reader.Read())
-    //                {
-    //                    CategoriesDropDown categories = new CategoriesDropDown();
-    //                    categories.CategoryId = Convert.ToInt32(reader["CategoryId"]);
-    //                    categories.CategoryName = reader["CategoryName"]?.ToString();
-    //                    categories.CategoryType = reader["CategoryType"]?.ToString();
-    //                    categoriesList.Add(categories);
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //    return categoriesList;
-    //}
-
 }

@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\model\\incomemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\model\\incomemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\controllers\\incomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\controllers\\incomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\data\\reportrepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\data\\reportrepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\data\\incomerepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\data\\incomerepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\data\\expenserepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\data\\expenserepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\model\\categoriesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\model\\categoriesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\model\\expensemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\model\\expensemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|c:\\users\\new\\source\\repos\\income\u0026expense\\income\u0026expenseapimanager\\income\u0026expenseapimanager\\data\\categoryrepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34BC5F34-FBF0-41DA-993D-B4C2767B3506}|Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager.csproj|solutionrelative:income\u0026expenseapimanager\\data\\categoryrepositery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,37 +46,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IncomeModel.cs",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\IncomeModel.cs",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Model\\IncomeModel.cs",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\IncomeModel.cs",
-              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Model\\IncomeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T18:46:26.678Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IncomeController.cs",
-              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\IncomeController.cs",
-              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Controllers\\IncomeController.cs",
-              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\IncomeController.cs",
-              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Controllers\\IncomeController.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAgwFsAAABAAAAA",
+              "DocumentIndex": 3,
+              "Title": "IncomeRepositery.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\IncomeRepositery.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Data\\IncomeRepositery.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\IncomeRepositery.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Data\\IncomeRepositery.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwDEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T17:26:54.502Z",
+              "WhenOpened": "2025-02-01T04:44:52.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Controllers\\ReportController.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Controllers\\ReportController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T04:39:31.237Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReportRepositery.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\ReportRepositery.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Data\\ReportRepositery.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\ReportRepositery.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Data\\ReportRepositery.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwDMAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T04:39:12.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExpenseModel.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\ExpenseModel.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Model\\ExpenseModel.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\ExpenseModel.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Model\\ExpenseModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:38.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExpenseRepositery.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\ExpenseRepositery.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Data\\ExpenseRepositery.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\ExpenseRepositery.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Data\\ExpenseRepositery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:33.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExpenseController.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\ExpenseController.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Controllers\\ExpenseController.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\ExpenseController.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Controllers\\ExpenseController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:32.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoriesModel.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\CategoriesModel.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Model\\CategoriesModel.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Model\\CategoriesModel.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Model\\CategoriesModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:26.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryRepositery.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\CategoryRepositery.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Data\\CategoryRepositery.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Data\\CategoryRepositery.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Data\\CategoryRepositery.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAAHAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:23.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Income\u0026ExpenseApiManager\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\new\\source\\repos\\Income\u0026Expense\\Income\u0026ExpenseApiManager\\Income\u0026ExpenseApiManager\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Income\u0026ExpenseApiManager\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAAAJ0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T16:07:21.872Z"
             }
           ]
         },

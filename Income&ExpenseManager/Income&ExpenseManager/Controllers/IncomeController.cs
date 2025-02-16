@@ -3,6 +3,7 @@ using Income_ExpenseManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using ClosedXML.Excel;
 using System.Reflection;
 using System.Text;
 
@@ -34,19 +35,62 @@ namespace Income_ExpenseManager.Controllers
                 {
                     var incomeData = await response.Content.ReadAsStringAsync();    
                     IncomeModel model = JsonConvert.DeserializeObject<IncomeModel>(incomeData);
-                    //List<setCategoriesDropDown> categories = await SetCategoriesDropdown();
-
-                    //List<SelectListItem> selectListItems = new List<SelectListItem>();
-                    //foreach (setCategoriesDropDown models in categories)
-                    //{
-                    //    selectListItems.Add(new SelectListItem { Value = models.CategoryId.ToString(), Text = models.CategoryName});
-                    //}
-                    //ViewBag.StateList = selectListItems;
                     return View(model);
                 }
             }
             return View();
         }
+
+        public async Task<IActionResult> ExportToExcel()
+        {
+            var userId = CV.UserId();
+            var response = await _httpClient.GetAsync($"{baseUrl}/SelectByUserID/{userId}");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                TempData["Error"] = "Failed to fetch income data.";
+                return RedirectToAction("GetIncomeData");
+            }
+
+            var data = await response.Content.ReadAsStringAsync();
+            var incomes = JsonConvert.DeserializeObject<List<IncomeModel>>(data);
+
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Income Report");
+
+                // Add Headers
+                worksheet.Cell(1, 1).Value = "No.";
+                worksheet.Cell(1, 2).Value = "Income Amount";
+                worksheet.Cell(1, 3).Value = "Income Source";
+                worksheet.Cell(1, 4).Value = "Income Date";
+                worksheet.Cell(1, 5).Value = "Notes";
+
+                // Add Data
+                int row = 2;
+                int index = 1;
+                foreach (var income in incomes)
+                {
+                    worksheet.Cell(row, 1).Value = index++;
+                    worksheet.Cell(row, 2).Value = income.IncomeAmount;
+                    worksheet.Cell(row, 3).Value = income.IncomeSource;
+                    worksheet.Cell(row, 4).Value = income.IncomeDate.ToString("yyyy-MM-dd");
+                    worksheet.Cell(row, 5).Value = income.Notes;
+                    row++;
+                }
+
+                // Auto-fit columns
+                worksheet.Columns().AdjustToContents();
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "IncomeReport.xlsx");
+                }
+            }
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> AddForm(IncomeModel incomeModel)
@@ -113,10 +157,10 @@ namespace Income_ExpenseManager.Controllers
         }
         #endregion
 
-        #region Helper Methods
+        #region Dropdown
         private async Task SetCategoriesDropdown()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7291/api/Category/income");
+            var response = await _httpClient.GetAsync("https://localhost:7291/api/Category/SelectByCategoryType/income");
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsStringAsync();

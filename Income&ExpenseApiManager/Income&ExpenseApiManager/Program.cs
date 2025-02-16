@@ -13,6 +13,7 @@ builder.Services.AddScoped<IncomeRepositery>();
 builder.Services.AddScoped<ExpenseRepositery>();
 builder.Services.AddScoped<CategoryRepositery>();
 builder.Services.AddScoped<RegistrationRepositery>();
+builder.Services.AddScoped<ReportRepositery>();
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 

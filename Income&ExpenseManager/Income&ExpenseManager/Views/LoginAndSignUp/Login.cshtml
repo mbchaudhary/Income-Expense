@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LoginViewModel
+
+@{
     ViewBag.Title = "Login";
     Layout = "_LogIn";
 }
@@ -6,22 +8,30 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow-sm p-4" style="max-width: 400px; width: 100%; border-radius: 15px;">
         <h2 class="text-center mb-4" style="color: #333;">Login to Expense Manager</h2>
-        <form method="post" action="@Url.Action("Login", "LoginAndSignUp")">
+
+        <form method="post" asp-action="Login" asp-controller="LoginAndSignUp">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="mb-3">
                 <label for="Email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="Email" name="email" placeholder="Enter your email" required />
+                <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                <span class="text-danger" asp-validation-for="Email"></span>
             </div>
+
             <div class="mb-3">
                 <label for="Password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="Password" name="password" placeholder="Enter your password" required />
+                <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" />
+                <span class="text-danger" asp-validation-for="Password"></span>
             </div>
+
             <div class="d-grid mb-3">
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
+
             <div class="text-center">
                 <p class="text-muted">
                     Don't have an account?
-                    <a asp-area="" asp-controller="LoginAndSignUp" asp-action="SignUp">Sign Up</a>
+                    <a asp-controller="LoginAndSignUp" asp-action="SignUp">Sign Up</a>
                 </p>
             </div>
         </form>

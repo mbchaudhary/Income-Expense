@@ -5,7 +5,7 @@ namespace Income_ExpenseApiManager.Model
     public class CategoriesModel
     {
         [Key]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryType { get; set; }
         public int? UserId { get; set; }

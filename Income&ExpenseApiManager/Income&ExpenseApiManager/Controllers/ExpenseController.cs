@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Income_ExpenseApiManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ExpenseController : ControllerBase
     {
@@ -21,14 +21,14 @@ namespace Income_ExpenseApiManager.Controllers
 
         [HttpGet("{id}")]
 
-        public IActionResult GetExpenseData(int id, ExpenseRepositery expenseRepositery)
+        public IActionResult GetExpenseDataByUserID(int id, ExpenseRepositery expenseRepositery)
         {
             if(id<=0)
             {
                 return BadRequest();
             }
 
-            List<ExpenseModel> model = expenseRepositery.SelectByIDExpense(id);
+            List<ExpenseModel> model = expenseRepositery.SelectByUserID(id);
 
             if(model == null || model.Count<=0)
             {
@@ -38,10 +38,29 @@ namespace Income_ExpenseApiManager.Controllers
             return Ok(model);
         }
 
+        [HttpGet("{id}")]
+
+        public IActionResult SelectByExpenseID(int id, ExpenseRepositery expenseRepositery)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid User ID");
+            }
+
+            ExpenseModel expenses = expenseRepositery.SelectByExpenseID(id);
+
+            if (expenses == null)
+            {
+                return NotFound("No expense records found for the given User ID.");
+            }
+
+            return Ok(expenses);
+        }
+
 
         [HttpDelete("{id}")]
 
-        public IActionResult DeletExpense(int id)
+        public IActionResult DeleteExpense(int id)
         {
             string cs = this._configuration.GetConnectionString("ConnectionString");
             SqlConnection conn = new SqlConnection(cs);

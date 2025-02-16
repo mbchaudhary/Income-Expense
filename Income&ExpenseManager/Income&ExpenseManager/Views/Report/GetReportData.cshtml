@@ -1,108 +1,120 @@
-﻿@{
+﻿@model List<ReportModel>
+
+@{
     ViewData["Title"] = "Reports";
 }
 
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <title>Income and Expense Manager - Report</title>
-    <!-- Bootstrap and Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-        body {
-            background-color: #f8f9fa;
+    .tbl-th-feild th {
+        background-color: cornflowerblue;
+        color: white !important;
+        text-transform: uppercase;
+        padding: 12px;
+    }
+
+    .filter-container {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-container {
+        margin-top: 20px;
+    }
+
+    .btn-custom {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-reset {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-excel {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .table thead {
+        background: linear-gradient(90deg, #007bff, #0056b3);
+        color: white;
+    }
+
+        .table thead th {
+            text-transform: uppercase;
+            font-weight: bold;
         }
+</style>
 
-        .filter-container {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+<div class="container">
+    <div class="filter-container">
+        <h5 class="text-primary">Filter by Date, Type, Category, and Amount</h5>
+        <form method="get" asp-controller="Report" asp-action="GetReportData" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Start Date</label>
+                <input type="date" class="form-control" name="startDate" value="@Context.Request.Query["startDate"]" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">End Date</label>
+                <input type="date" class="form-control" name="endDate" value="@Context.Request.Query["endDate"]" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Type</label>
+                <select class="form-select" name="type">
+                    <option value="">All</option>
+                    <option value="income" selected="@(Context.Request.Query["type"] == "Income" ? "selected" : null)">Income</option>
+                    <option value="expense" selected="@(Context.Request.Query["type"] == "Expense" ? "selected" : null)">Expense</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" name="category">
+                    <option value="">All</option>
+                    @if (ViewBag.CategoriesList != null)
+                    {
+                        foreach (var category in ViewBag.CategoriesList)
+                        {
+                            <option value="@category.Text" selected="@(Context.Request.Query["category"] == category.Text ? "selected" : null)">@category.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Greater Than Amount</label>
+                <input type="number" class="form-control" name="minAmount" value="@Context.Request.Query["minAmount"]" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Less Than Amount</label>
+                <input type="number" class="form-control" name="maxAmount" value="@Context.Request.Query["maxAmount"]" />
+            </div>
 
-        .table-container {
-            margin-top: 20px;
-        }
+            <!-- Buttons Section -->
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-custom w-100">Apply Filter</button>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <a class="btn btn-reset w-100" href="@Url.Action("GetReportData", "Report")">Reset Filter</a>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <a class="btn btn-excel w-100" asp-controller="Report" asp-action="ExportToExcel">
+                    <i class="bi bi-file-earmark-excel"></i> Export to Excel
+                </a>
+            </div>
+        </form>
+    </div>
 
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-        }
-
-            .btn-custom:hover {
-                background-color: #0056b3;
-            }
-
-        .table thead {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-        }
-
-            .table thead th {
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Filter Section -->
-        <div class="filter-container">
-            <h5 class="text-primary">Filter by Date, Type, Category, and Amount</h5>
-            <form class="row g-3">
-                <div class="col-md-3">
-                    <label for="startDate" class="form-label">Start Date</label>
-                    <input type="date" class="form-control" id="startDate" name="startDate" />
-                </div>
-                <div class="col-md-3">
-                    <label for="endDate" class="form-label">End Date</label>
-                    <input type="date" class="form-control" id="endDate" name="endDate" />
-                </div>
-                <div class="col-md-3">
-                    <label for="type" class="form-label">Type</label>
-                    <select class="form-select" id="type" name="type">
-                        <option value="">All</option>
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label for="category" class="form-label">Category</label>
-                    <select class="form-select" id="category" name="category">
-                        <option value="">All</option>
-                        <option value="salary">Salary</option>
-                        <option value="utilities">Utilities</option>
-                        <option value="entertainment">Entertainment</option>
-                    </select>
-                </div>
-                <!-- Amount Filter -->
-                <div class="col-md-3">
-                    <label for="amountCondition" class="form-label">Amount</label>
-                    <select class="form-select" id="amountCondition" name="amountCondition">
-                        <option value="">Select Condition</option>
-                        <option value="greaterThan">Greater Than</option>
-                        <option value="lessThan">Less Than</option>
-                        <option value="equalTo">Equal To</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label for="amountValue" class="form-label">Amount Value</label>
-                    <input type="number" class="form-control" id="amountValue" name="amountValue" />
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                    <button type="button" class="btn btn-custom w-100">Apply Filter</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Income and Expense Table -->
-        <div class="table-container">
-            <table class="table table-hover table-bordered">
-                <thead>
+    <div class="table-container">
+        <div class="table-responsive" style="max-height: 500px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 8px;">
+            <table class="table table-striped table-hover table-bordered text-center">
+                <thead class="tbl-th-feild">
                     <tr>
                         <th>No</th>
                         <th>Amount</th>
@@ -110,48 +122,31 @@
                         <th>Date</th>
                         <th>Notes</th>
                         <th>Type</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Income Row 1 -->
-                    <tr>
-                        <td>1</td>
-                        <td>$1000</td>
-                        <td>Salary</td>
-                        <td>2024-12-01</td>
-                        <td>Monthly salary payment</td>
-                        <td>
-                            <span class="badge bg-success">Income</span>
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i> Edit</button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-
-                    <!-- Expense Row 1 -->
-                    <tr>
-                        <td>2</td>
-                        <td>$200</td>
-                        <td>Utilities</td>
-                        <td>2024-12-10</td>
-                        <td>Electricity bill payment</td>
-                        <td>
-                            <span class="badge bg-danger">Expense</span>
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i> Edit</button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete</button>
-                        </td>
-                    </tr>
-
+                    @if (Model?.Any() == true)
+                    {
+                        int index = 1;
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@index</td>
+                                <td>@String.Format("{0:C}", item.Amount)</td>
+                                <td>@item.Category</td>
+                                <td>@item.Date.ToShortDateString()</td>
+                                <td>@(item.Notes == "" ? "NULL" : @item.Notes)</td>
+                                <td>@item.Type</td>
+                            </tr>
+                            index++;
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6" class="text-center">No data found.</td></tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</div>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Income&ExpenseManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7995db3f188481a2c487104ef2f0ce30d8d6d26a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4401bcf0e42897eb73941c4a4078e19b0f84b169")]
 [assembly: System.Reflection.AssemblyProductAttribute("Income&ExpenseManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Income&ExpenseManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
